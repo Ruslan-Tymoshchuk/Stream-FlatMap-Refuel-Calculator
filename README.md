@@ -6,16 +6,13 @@ The goal of this project is to calculate the total amount of fuel (in liters) re
 
 ---Input Specification:
 
-The input is a list of maps (or dictionaries), where each map represents a user's fuel bills.
+The input is a list of maps, where each map represents a user's fuel bills.
 
 Each map contains:
 
 User ID (String): A unique identifier for the user.
 
-Fuel Bill (Bill): An object representing the details of the fuel transaction. 
-
-This object include:
-Liters (Integer): The amount of fuel (in liters) refueled in that transaction.
+Fuel Bill (Bill): An object representing the details of the fuel transaction. This object include: Liters (Integer): The amount of fuel (in liters) refueled in that transaction.
 
 Date (Date): The date of the transaction to facilitate filtering by the specified date range.
 
