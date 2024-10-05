@@ -8,7 +8,7 @@ public class FuelRefuelCalculator {
         
     public Map<String, Integer> countRefueledLiters(List<Map<String, Bill>> usersBills, 
                                                            LocalDate startDate, LocalDate endDate) {
-        if (startDate != null && endDate != null) {
+        if (usersBills != null && startDate != null && endDate != null) {
             return usersBills 
                     .stream()
                     .filter(map -> map != null && !map.isEmpty())
@@ -19,7 +19,7 @@ public class FuelRefuelCalculator {
                                               entry -> entry.getValue().getLitersRefueled(),
                                               Integer::sum));
         } else {
-            throw new IllegalArgumentException("Start date and end date cannot be null"); 
+            throw new IllegalArgumentException("Input arguments should not be null"); 
         }
     }
     
