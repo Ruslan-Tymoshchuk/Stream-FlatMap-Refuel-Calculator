@@ -7,6 +7,11 @@ public class Bill {
     private Integer litersRefueled;
     private LocalDate dateRefueled;
     
+    public Bill(Integer litersRefueled, LocalDate dateRefueled) {
+        this.litersRefueled = litersRefueled;
+        this.dateRefueled = dateRefueled;
+    }
+
     public Integer getLitersRefueled() {
         return litersRefueled;
     }
