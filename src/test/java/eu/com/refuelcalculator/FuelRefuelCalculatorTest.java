@@ -3,7 +3,6 @@ package eu.com.refuelcalculator;
 import static java.time.LocalDate.*;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.*;
-
 import org.junit.jupiter.api.Test;
 
 class FuelRefuelCalculatorTest {
@@ -55,13 +54,15 @@ class FuelRefuelCalculatorTest {
         usersBillsMap4.put("userId2", new Bill(23, of(2024, 4, 28)));
         usersBillsMap4.put("userId3", new Bill(23, of(2024, 4, 28)));
         usersBillsMap4.put("userId4", new Bill(23, of(2024, 4, 28)));
-        List<Map<String, Bill>> actual = List.of(usersBillsMap1, usersBillsMap2, usersBillsMap3, usersBillsMap4);
         Map<String, Integer> expected = new HashMap<>();
         expected.put("userId1", 43);
         expected.put("userId2", 43);
         expected.put("userId3", 43);
         expected.put("userId4", 43);
-        assertEquals(expected, refuelCalculator.countRefueledLiters(actual, of(2024, 3, 1), of(2024, 4, 25)));
+        assertEquals(expected,
+                refuelCalculator.countRefueledLiters(
+                        List.of(usersBillsMap1, usersBillsMap2, usersBillsMap3, usersBillsMap4), of(2024, 3, 1),
+                        of(2024, 4, 25)));
     }
 
 }
